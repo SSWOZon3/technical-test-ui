@@ -3,10 +3,10 @@ version: '3.8'
 services:
   frontend:
     build:
-      context: ./front-end
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    depends_on:
-      - backend
     volumes:
-      - ./front-end:/app
+      - .:/app
+      - /app/node_modules
